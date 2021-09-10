@@ -23,7 +23,7 @@ return res.json()
           let img = document.createElement('img');
           let cardBtn = document.createElement('a');
           img.setAttribute('src',data[i].imageUrl);
-          cardBtn.setAttribute('href',"produit.html");
+          cardBtn.setAttribute('href',"produit.html?id=" + data[i]._id);
           col.className = "col12 col-lg-4 d-flex align-items-stretch";
           card.className = ("card border-muted shadow text-center mb-4");
           cardBody.className = ("card-body");
