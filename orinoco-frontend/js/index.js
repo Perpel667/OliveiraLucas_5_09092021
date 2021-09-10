@@ -2,7 +2,7 @@
 const productsList = document.getElementById("productsList");
 const url = "http://localhost:3000/api/cameras";
 
-/* Function */
+/* Functions */
 
 function append(parent,el){
     return parent.appendChild(el);
@@ -14,7 +14,7 @@ return res.json()
   })
   .then(function(data){
       for (let i = 0; i < data.length; i++){
-          let col = document.createElement('div');
+           let col = document.createElement('div');
           let card = document.createElement('div');
           let cardBody = document.createElement('div');
           let cardTitle = document.createElement('h5');
@@ -44,7 +44,8 @@ return res.json()
       } 
   })
 .catch(function(error) {
- document.getElementById("productsList").innerHTML = "<h3>erreur</h3>"
+ document.getElementById("footer").classList.add('fixed-bottom');
+ document.getElementById("productsList").innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
 });
   
 
