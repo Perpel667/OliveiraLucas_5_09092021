@@ -3,6 +3,10 @@ let params = new URL(document.location).searchParams;
 let id = params.get('id');
 let url = 'http://localhost:3000/api/cameras';
 
+function append(parent,el){
+  return parent.appendChild(el);
+}
+
 //Recuperation des elements //
 const title = document.querySelector('title');
 const cardHeader = document.querySelector('.card-header');
@@ -25,5 +29,10 @@ fetch(url +"/"+ id)
       cardPrice.innerText = `${donnees.price / 100} €`;
 
       // objectifs //
-      
+      for (let i = 0; i < donnees.lenses.length; i++) {
+        let lensesSelect = document.createElement('option');
+        let formGroup = document.getElementById('lens');
+        append(formGroup,lensesSelect);
+        lensesSelect.innerHTML = donnees.lenses[i];
+      }
     })
