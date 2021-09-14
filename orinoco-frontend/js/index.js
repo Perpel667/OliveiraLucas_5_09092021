@@ -15,7 +15,7 @@ return res.json()
   })
   .then(function(data){
       for (let i = 0; i < data.length; i++){
-          
+
           // Creation des elements //
 
           let col = document.createElement('div');
@@ -32,6 +32,7 @@ return res.json()
           cardBtn.setAttribute('href',"produit.html?id=" + data[i]._id);
 
           // Ajout des classes //
+          
           col.className = "col12 col-lg-4 d-flex align-items-stretch";
           card.className = ("card border-muted shadow text-center mb-4");
           cardBody.className = ("card-body");
