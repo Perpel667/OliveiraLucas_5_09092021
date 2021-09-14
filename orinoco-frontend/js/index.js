@@ -15,15 +15,23 @@ return res.json()
   })
   .then(function(data){
       for (let i = 0; i < data.length; i++){
-           let col = document.createElement('div');
+          
+          // Creation des elements //
+
+          let col = document.createElement('div');
           let card = document.createElement('div');
           let cardBody = document.createElement('div');
           let cardTitle = document.createElement('h5');
           let cardText = document.createElement('p');
           let img = document.createElement('img');
           let cardBtn = document.createElement('a');
+
+          // Ajout des attributs //
+
           img.setAttribute('src',data[i].imageUrl);
           cardBtn.setAttribute('href',"produit.html?id=" + data[i]._id);
+
+          // Ajout des classes //
           col.className = "col12 col-lg-4 d-flex align-items-stretch";
           card.className = ("card border-muted shadow text-center mb-4");
           cardBody.className = ("card-body");
@@ -31,9 +39,15 @@ return res.json()
           cardTitle.className = ("card-title");
           cardText.className = ("card-text");
           cardBtn.className = ("btn btn-outline-dark");
+
+          // Ajout des textes (description, nom, etc..) //
+
           cardBtn.innerText = "Voir le produit";
           cardText.innerHTML = data[i].description;
           cardTitle.innerHTML = data[i].name;
+
+          // Structure des cartes produits //
+
           append(productsList,col);
           append(col,card);
           append(card,img);
