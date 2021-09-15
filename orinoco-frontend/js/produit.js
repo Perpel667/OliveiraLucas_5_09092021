@@ -54,6 +54,18 @@ fetch(url +"/"+ id)
         append(formGroup,lensesSelect);
         lensesSelect.setAttribute('value',[i]);
         lensesSelect.innerHTML = donnees.lenses[i];
+        const lens = document.getElementById('lens');
+
+        cardBtn.addEventListener("click", function(e) {
+          e.preventDefault();
+          const ajout = {
+            nom : data.name,
+            choix : lens.options[lens.selectedIndex].text,
+            prix: donnees.price/100,
+          };
+          console.log(ajout);
+        })
+
       }
     })
     .catch(function(error) {
@@ -63,3 +75,4 @@ fetch(url +"/"+ id)
        removeClasses();
       cardDescr.innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
      });
+
