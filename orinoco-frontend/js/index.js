@@ -3,10 +3,9 @@ const productsList = document.getElementById("productsList");
 const url = "http://localhost:3000/api/cameras";
 /* Variables */
 
+/*************/
 /* Functions */
-function append(parent,el){
-    return parent.appendChild(el);
-};
+/*************/
 
 // Creation des elements //
 function create(){
@@ -20,6 +19,10 @@ function create(){
 };
 
 // Structure des cartes produits //
+function append(parent,el){
+    return parent.appendChild(el);
+};
+
 function structure(){
     append(productsList,col);
           append(col,card);
@@ -39,7 +42,10 @@ function addClass(){
           cardText.className = "card-text";
           cardBtn.className = "btn btn-outline-dark";
 }
+
+/*************/
 /* Functions */
+/*************/
 
 /* fetch + intégration des données sur la page index.html*/
 
