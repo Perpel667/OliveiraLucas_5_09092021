@@ -7,6 +7,13 @@ function append(parent,el){
   return parent.appendChild(el);
 }
 
+function removeClasses() {
+  var col1 = document.getElementById("col1");
+  var col2 = document.getElementById("col2");
+  col1.classList.remove("col-lg-6");
+  col2.classList.remove("col-lg-6");
+}
+
 //Recuperation des elements //
 const title = document.querySelector('title');
 const cardHeader = document.querySelector('.card-header');
@@ -14,6 +21,9 @@ const cardImg = document.querySelector('.card-img-top');
 const cardTitle = document.querySelector('.card-title');
 const cardDescr = document.querySelector('.card-descr');
 const cardPrice = document.querySelector('.card-price');
+const cardBtn = document.querySelector('.card-btn');
+const cardForm = document.querySelector('.form-group');
+
 
 fetch(url +"/"+ id)
 .then(function(res) {
@@ -36,3 +46,10 @@ fetch(url +"/"+ id)
         lensesSelect.innerHTML = donnees.lenses[i];
       }
     })
+    .catch(function(error) {
+      cardHeader.remove();
+      cardBtn.remove();
+      cardForm.remove();
+       removeClasses();
+      cardDescr.innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
+     });
