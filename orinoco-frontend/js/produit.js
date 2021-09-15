@@ -31,7 +31,7 @@ fetch(url +"/"+ id)
     })
     .then(function(data){
       donnees = data;
-      console.log(donnees);
+      /* console.log(donnees); */
       title.innerHTML = "Orinoco | " + data.name;
       cardHeader.innerText = data.name;
       cardImg.src = data.imageUrl;
