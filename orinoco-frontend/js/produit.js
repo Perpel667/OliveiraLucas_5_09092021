@@ -3,16 +3,23 @@ let params = new URL(document.location).searchParams;
 let id = params.get('id');
 let url = 'http://localhost:3000/api/cameras';
 
+/*************/
+/* Functions */
+/*************/
+
+/* Structure de la carte produit */
 function append(parent,el){
   return parent.appendChild(el);
 }
 
+// supressions des classes pour l'error //
 function removeClasses() {
   var col1 = document.getElementById("col1");
   var col2 = document.getElementById("col2");
   col1.classList.remove("col-lg-6");
   col2.classList.remove("col-lg-6");
 }
+/* Structure de la carte produit */
 
 //Recuperation des elements //
 const title = document.querySelector('title');
@@ -24,6 +31,7 @@ const cardPrice = document.querySelector('.card-price');
 const cardBtn = document.querySelector('.card-btn');
 const cardForm = document.querySelector('.form-group');
 
+/* fetch + l'id */
 
 fetch(url +"/"+ id)
 .then(function(res) {
@@ -31,7 +39,8 @@ fetch(url +"/"+ id)
     })
     .then(function(data){
       donnees = data;
-      /* console.log(donnees); */
+
+      // ajout des attributs et des textes //
       title.innerHTML = "Orinoco | " + data.name;
       cardHeader.innerText = data.name;
       cardImg.src = data.imageUrl;
@@ -43,6 +52,7 @@ fetch(url +"/"+ id)
         let lensesSelect = document.createElement('option');
         let formGroup = document.getElementById('lens');
         append(formGroup,lensesSelect);
+        lensesSelect.setAttribute('value',[i]);
         lensesSelect.innerHTML = donnees.lenses[i];
       }
     })
