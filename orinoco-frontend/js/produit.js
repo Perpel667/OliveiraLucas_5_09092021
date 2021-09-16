@@ -72,14 +72,19 @@ fetch(url +"/"+ id)
           prix: donnees.price/100,
         };
         // Local Storage // 
+
+        //fonction ajout d'un produit dans le localStorage //
+        const addProductInLocalStorage = () =>{
+          productsDansLocalStorage.push(product);
+         localStorage.setItem('produits',JSON.stringify(productsDansLocalStorage));
+        }
+        //fonction ajout d'un produit dans le localStorage //
         let productsDansLocalStorage = JSON.parse(localStorage.getItem("produits"))
        if(productsDansLocalStorage){
-        productsDansLocalStorage.push(product);
-        localStorage.setItem('produits',JSON.stringify(productsDansLocalStorage));
+        addProductInLocalStorage();
        }else{
          productsDansLocalStorage = [];
-         productsDansLocalStorage.push(product);
-         localStorage.setItem('produits',JSON.stringify(productsDansLocalStorage));
+         addProductInLocalStorage();
        }
       })
     })
