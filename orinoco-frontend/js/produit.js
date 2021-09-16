@@ -72,10 +72,6 @@ fetch(url +"/"+ id)
         };
 
         console.log(ajout);
-
-        // alerte confirmation produit bien dans le panier //
-        confirmAddCartOnce();
-
       })
     })
     .catch(function(error) {
