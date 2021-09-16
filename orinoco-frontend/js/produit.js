@@ -4,7 +4,7 @@ let id = params.get('id');
 let url = 'http://localhost:3000/api/cameras';
 
 /*************/
-/* Functions */
+/* Fonctions */
 /*************/
 
 /* Structure de la carte produit */
@@ -21,6 +21,18 @@ function removeClasses() {
 }
 /* Structure de la carte produit */
 
+/* confirmation panier */
+const confirmAddCart = () => {
+  let successAlert = document.createElement('p');
+        append(addToCart,successAlert);
+        successAlert.innerText = "Ajouté ✔️";
+        successAlert.className = "my-4 ms-2 text-success"
+}
+
+/*************/
+/* Fonctions */
+/*************/
+
 //Recuperation des elements //
 const title = document.querySelector('title');
 const cardHeader = document.querySelector('.card-header');
@@ -30,6 +42,7 @@ const cardDescr = document.querySelector('.card-descr');
 const cardPrice = document.querySelector('.card-price');
 const cardBtn = document.querySelector('.card-btn');
 const cardForm = document.querySelector('.form-group');
+const addToCart = document.getElementById('addToCart');
 
 /* fetch + l'id */
 
@@ -56,17 +69,21 @@ fetch(url +"/"+ id)
         lensesSelect.innerHTML = donnees.lenses[i];
         const lens = document.getElementById('lens');
 
-        cardBtn.addEventListener("click", function(e) {
-          e.preventDefault();
-          const ajout = {
-            nom : data.name,
-            choix : lens.options[lens.selectedIndex].text,
-            prix: donnees.price/100,
-          };
-          console.log(ajout);
-        })
-
       }
+      cardBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        const ajout = {
+          nom : data.name,
+          choix : lens.options[lens.selectedIndex].text,
+          prix: donnees.price/100,
+        };
+
+        console.log(ajout);
+
+        // alerte confirmation produit bien dans le panier //
+        confirmAddCart();
+
+      })
     })
     .catch(function(error) {
       cardHeader.remove();
