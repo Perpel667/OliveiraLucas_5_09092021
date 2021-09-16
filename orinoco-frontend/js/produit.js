@@ -68,7 +68,7 @@ fetch(url +"/"+ id)
         // recuperation du choix d'achat //
         const product = {
           nom : data.name,
-          choix : lens.options[lens.selectedIndex].text,
+          option : lens.options[lens.selectedIndex].text,
           prix: donnees.price/100,
         };
         // Local Storage // 
