@@ -22,11 +22,30 @@ function removeClasses() {
 /* Structure de la carte produit */
 
 /* confirmation panier */
+let confirmAdd = false;
+
 const confirmAddCart = () => {
   let successAlert = document.createElement('p');
         append(addToCart,successAlert);
         successAlert.innerText = "Ajouté ✔️";
         successAlert.className = "my-4 ms-2 text-success"
+        hide();
+        confirmAdd = true;
+
+//cache le texte de confirmation au bout de 3sec //
+function hide() {
+  timeoutID = window.setTimeout(hideClass, 3000);
+}
+function hideClass() {
+  successAlert.className = "d-none";
+}
+
+}
+// Empeche de montrer Ajouté ✔️ a chaque clic //
+const confirmAddCartOnce = () =>{
+  if (!confirmAdd){
+    confirmAddCart();
+  }
 }
 
 /*************/
@@ -81,7 +100,7 @@ fetch(url +"/"+ id)
         console.log(ajout);
 
         // alerte confirmation produit bien dans le panier //
-        confirmAddCart();
+        confirmAddCartOnce();
 
       })
     })
