@@ -53,7 +53,7 @@ fetch(url +"/"+ id)
       cardDescr.innerText = data.description;
       cardPrice.innerText = `${donnees.price / 100} €`;
 
-      // objectifs //
+      // options objectifs //
       for (let i = 0; i < donnees.lenses.length; i++) {
         let lensesSelect = document.createElement('option');
         let formGroup = document.getElementById('lens');
@@ -65,13 +65,22 @@ fetch(url +"/"+ id)
       }
       cardBtn.addEventListener("click", function(e) {
         e.preventDefault();
-        const ajout = {
+        // recuperation du choix d'achat //
+        const product = {
           nom : data.name,
           choix : lens.options[lens.selectedIndex].text,
           prix: donnees.price/100,
         };
-
-        console.log(ajout);
+        // Local Storage // 
+        let productsDansLocalStorage = JSON.parse(localStorage.getItem("produits"))
+       if(productsDansLocalStorage){
+        productsDansLocalStorage.push(product);
+        localStorage.setItem('produits',JSON.stringify(productsDansLocalStorage));
+       }else{
+         productsDansLocalStorage = [];
+         productsDansLocalStorage.push(product);
+         localStorage.setItem('produits',JSON.stringify(productsDansLocalStorage));
+       }
       })
     })
     .catch(function(error) {
