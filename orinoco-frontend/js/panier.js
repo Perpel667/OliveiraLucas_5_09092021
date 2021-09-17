@@ -76,4 +76,24 @@ th2.setAttribute('scope','row');
     table.remove();
     pagePanier.innerHTML = `<h5 class="text-center">Aucun article ce trouve dans votre panier</h5><a href="index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a>`;
 }
+// Validation des informations //
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
 

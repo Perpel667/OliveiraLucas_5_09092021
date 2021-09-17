@@ -53,13 +53,59 @@
             <tbody id="tbody">
             </tbody>
           </table>
+          <div class="row mx-4" id="formPanier">
+            <h4>Informations</h4>
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-4">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" required>
+              </div>
+              <div class="col-md-4">
+                <label for="prenom" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="prenom" required>
+              </div>
+              <div class="col-md-4">
+                <label for="email" class="form-label">Adresse Email</label>
+                <div class="input-group has-validation">
+                  <input type="email" class="form-control" id="email" aria-describedby="email" required>
+                  <div class="invalid-feedback">
+                    Adresse-mail invalide.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="adresse" class="form-label">Adresse</label>
+                <input type="text" class="form-control" id="adresse" required>
+                <div class="invalid-feedback">
+                  Veuillez renseigner une adresse.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="codePostal" class="form-label">Code Postal</label>
+                <input type="number" class="form-control" id="codePostal" required>
+                <div class="invalid-feedback">
+                  Code Postal invalide.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="ville" class="form-label">Ville</label>
+                <input type="text" class="form-control" id="ville" required>
+                <div class="invalid-feedback">
+                  Veuillez renseigner une ville.
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">Confirmer la commande</button>
+              </div>
+            </form>
+          </div>
       </div>
     </div>
   </div>
 </div>
 <!-- Produits -->
 <!-- Footer -->
-<footer id="footer" class="bg-dark fixed-bottom">
+<footer id="footer" class="bg-dark">
     <div class="container">
       <div class="row">
         <div class="col py-2">
