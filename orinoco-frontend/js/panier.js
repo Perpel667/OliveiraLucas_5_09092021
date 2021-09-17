@@ -5,7 +5,8 @@ function append(parent,el){
 
 let produits = JSON.parse(localStorage.getItem('produits'));
 console.log(produits);
-
+//si il y a des elements dans le panier //
+if(produits){
 for (let i = 0; i < produits.length; i++) {
     let tbody = document.getElementById('tbody');
     let tr = document.createElement('tr');
@@ -48,4 +49,14 @@ th2.setAttribute('scope','row');
     th2.innerText = "";
     td3.innerHTML = "<h6>Prix total :</h6>";
     td4.innerHTML = `<h6>${prixTotal} €</h6>`;
+    //si il n'y a rien dans le panier //
+}else{
+    let table = document.getElementById("tablePanier");
+    let pagePanier = document.getElementById("pagePanier");
+    let panierVide = document.createElement("div");
+    //supression de la table //
+    table.remove();
+    append(pagePanier,panierVide);
+    panierVide.innerHTML = '<h5 class="text-center">Aucun article ce trouve dans votre panier !</h5>';
+}
 
