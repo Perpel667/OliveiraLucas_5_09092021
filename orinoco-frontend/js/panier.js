@@ -13,9 +13,6 @@ function createTableElem(){
          td = document.createElement('td');
          td2 = document.createElement('td');
 }
-function test(nom,el){
-nom = document.createElement(el);
-}
 // structure du panier //
  function structurePanier(){
     append(tbody, tr);
