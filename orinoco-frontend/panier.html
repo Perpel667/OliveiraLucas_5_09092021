@@ -58,11 +58,11 @@
             <form class="row g-3 needs-validation" novalidate>
               <div class="col-md-4">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" required>
+                <input type="text" class="form-control" id="nom"pattern="[a-zA-Z]*" required>
               </div>
               <div class="col-md-4">
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" required>
+                <input type="text" class="form-control" id="prenom" pattern="[a-zA-Z]*"required>
               </div>
               <div class="col-md-4">
                 <label for="email" class="form-label">Adresse Email</label>
@@ -89,7 +89,7 @@
               </div>
               <div class="col-md-3">
                 <label for="ville" class="form-label">Ville</label>
-                <input type="text" class="form-control" id="ville" required>
+                <input type="text" class="form-control" id="ville" pattern="[a-zA-Z]*"required>
                 <div class="invalid-feedback">
                   Veuillez renseigner une ville.
                 </div>
