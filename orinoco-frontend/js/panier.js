@@ -1,36 +1,58 @@
-/* Structure de la carte produit */
+/*************/
+/* Functions */
+/*************/
+/* append */
 function append(parent,el){
     return parent.appendChild(el);
   }
-
-let produits = JSON.parse(localStorage.getItem('produits'));
-console.log(produits);
-//si il y a des elements dans le panier //
-if(produits){
-for (let i = 0; i < produits.length; i++) {
-    let tbody = document.getElementById('tbody');
-    let tr = document.createElement('tr');
-    let th = document.createElement('th')
-    let td = document.createElement('td');
-    let td2 = document.createElement('td');
+  // creation de la table panier //
+function createTableElem(){
+         tbody = document.getElementById('tbody');
+         tr = document.createElement('tr');
+         th = document.createElement('th')
+         td = document.createElement('td');
+         td2 = document.createElement('td');
+}
+function test(nom,el){
+nom = document.createElement(el);
+}
+// structure du panier //
+ function structurePanier(){
     append(tbody, tr);
     append(tr,th);
     append(tr,td);
     append(tr,td2);
+ }
+ // calcul du prix total //
+ function calculTotal(){
+     toutLesPrix = [];
+    for (let j = 0; j < produits.length; j++){
+        toutLesPrix.push(produits[j].prix);
+    }
+     prixTotal = toutLesPrix.reduce(function(a, b){
+        return a + b;
+    },0);
+    return prixTotal;
+ }
+ //recuperation des produits selectionnés //
+
+let produits = JSON.parse(localStorage.getItem('produits'));
+console.log(produits);
+
+//si il y a des elements dans le panier //
+
+if(produits){
+for (let i = 0; i < produits.length; i++) {
+    createTableElem();
+    structurePanier();
     th.setAttribute('scope','row');
     td2.className = 'text-end';
     th.innerHTML = produits[i].nom;
     td.innerHTML = produits[i].option;
     td2.innerHTML = produits[i].prix + " €";
 }
-//Calcul du prix total //
-let toutLesPrix = [];
-    for (let j = 0; j < produits.length; j++){
-        toutLesPrix.push(produits[j].prix);
-    }
-    let prixTotal = toutLesPrix.reduce(function(a, b){
-        return a + b;
-    },0);
+//Calcul qui me retourne le prix total //
+    calculTotal();
 // footer table panier //
 let tablePanier = document.getElementById("tablePanier");
 let tfoot = document.createElement('tfoot');
