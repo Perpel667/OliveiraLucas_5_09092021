@@ -1,24 +1,35 @@
 /*************/
 /* Functions */
 /*************/
+
 /* append */
 function append(parent,el){
     return parent.appendChild(el);
   }
   // creation de la table panier //
 function createTableElem(){
-         tbody = document.getElementById('tbody');
-         tr = document.createElement('tr');
-         th = document.createElement('th')
-         td = document.createElement('td');
-         td2 = document.createElement('td');
+        tbody = document.getElementById('tbody');
+        tr = document.createElement('tr');
+        th = document.createElement('th')
+        td = document.createElement('td');
+        td2 = document.createElement('td');
+        append(tbody, tr);
+        append(tr,th);
+        append(tr,td);
+        append(tr,td2);
 }
-// structure du panier //
- function structurePanier(){
-    append(tbody, tr);
-    append(tr,th);
-    append(tr,td);
-    append(tr,td2);
+ //creation du footer de la table panier //
+ function createTableFooter(){
+    tablePanier = document.getElementById("tablePanier");
+    tfoot = document.createElement('tfoot');
+    th2 = document.createElement('th');
+    tr2 = document.createElement('tr');
+    td3 = document.createElement('td');
+    td4 = document.createElement('td');
+    append(tablePanier,tfoot)
+    append(tfoot,th2);
+    append(tfoot,td3);
+    append(tfoot,td4);
  }
  // calcul du prix total //
  function calculTotal(){
@@ -31,6 +42,31 @@ function createTableElem(){
     },0);
     return prixTotal;
  }
+ /* Validation des informations */
+(function () {
+    'use strict'
+  
+    // Recupere tout les formulaires ou l'ont souhaite appliquer la validation customisée
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop dans les formulaire et empeche la confirmation si ce n'est pas valide //
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
+  /*************/
+/* Functions */
+/*************/
+
  //recuperation des produits selectionnés //
 
 let produits = JSON.parse(localStorage.getItem('produits'));
@@ -40,8 +76,8 @@ console.log(produits);
 
 if(produits){
 for (let i = 0; i < produits.length; i++) {
+    // table panier //
     createTableElem();
-    structurePanier();
     th.setAttribute('scope','row');
     td2.className = 'text-end';
     th.innerHTML = produits[i].nom;
@@ -51,16 +87,7 @@ for (let i = 0; i < produits.length; i++) {
 //Calcul qui me retourne le prix total //
     calculTotal();
 // footer table panier //
-let tablePanier = document.getElementById("tablePanier");
-let tfoot = document.createElement('tfoot');
-let th2 = document.createElement('th');
-let tr2 = document.createElement('tr');
-let td3 = document.createElement('td');
-let td4 = document.createElement('td');
-append(tablePanier,tfoot)
-append(tfoot,th2);
-append(tfoot,td3);
-append(tfoot,td4);
+createTableFooter()
 th2.setAttribute('scope','row');
     th2.className ="border"
     td3.className = 'text-end';
@@ -76,24 +103,5 @@ th2.setAttribute('scope','row');
     table.remove();
     pagePanier.innerHTML = `<h5 class="text-center">Aucun article ce trouve dans votre panier</h5><a href="index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a>`;
 }
-// Validation des informations //
-(function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
+
 
