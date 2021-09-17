@@ -55,7 +55,7 @@
           </table>
           <div class="row mx-4" id="formPanier">
             <h4>Informations</h4>
-            <form class="row g-3 needs-validation" novalidate>
+            <form action="confirm.html" method="post" role="form" class="row g-3 needs-validation" novalidate>
               <div class="col-md-4">
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" class="form-control" id="nom"pattern="[a-zA-Z]*" required>
@@ -94,7 +94,10 @@
                   Veuillez renseigner une ville.
                 </div>
               </div>
-              <div class="col-12">
+              <div class="text-center text-md-start col-md-6">
+                <a href="index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a></a>
+              </div>
+              <div class="text-center col-md-6 text-md-end">
                 <button class="btn btn-success" type="submit">Confirmer la commande</button>
               </div>
             </form>
