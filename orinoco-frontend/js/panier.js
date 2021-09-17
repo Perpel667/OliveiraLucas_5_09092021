@@ -72,10 +72,8 @@ th2.setAttribute('scope','row');
 }else{
     let table = document.getElementById("tablePanier");
     let pagePanier = document.getElementById("pagePanier");
-    let panierVide = document.createElement("div");
     //supression de la table //
     table.remove();
-    append(pagePanier,panierVide);
-    panierVide.innerHTML = '<h5 class="text-center">Aucun article ce trouve dans votre panier !</h5>';
+    pagePanier.innerHTML = `<h5 class="text-center">Aucun article ce trouve dans votre panier !</h5><a href="index.html" class="link-secondary"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a>`;
 }
 
