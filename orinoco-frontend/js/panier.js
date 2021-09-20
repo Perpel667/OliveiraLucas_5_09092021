@@ -78,6 +78,11 @@ function createTableElem(){
               email : document.getElementById("email").value
             };
             console.log(contact);
+            let products = [];
+            for (let k = 0; k < produits.length; k++){
+              products.push(produits[k].nom);
+            }
+            console.log(products);
           }
   
           form.classList.add('was-validated')
