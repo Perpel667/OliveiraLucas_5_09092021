@@ -73,7 +73,6 @@ return res.json()
       } 
   })
 .catch(function(error) {
- document.getElementById("footer").classList.add('fixed-bottom');
  document.getElementById("productsList").innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
 });
 
