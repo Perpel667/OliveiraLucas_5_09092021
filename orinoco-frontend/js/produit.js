@@ -70,6 +70,7 @@ fetch(url +"/"+ id)
           nom : data.name,
           option : lens.options[lens.selectedIndex].text,
           prix: donnees.price/100,
+          id : data._id
         };
         // Local Storage // 
 
