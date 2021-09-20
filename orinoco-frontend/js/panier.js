@@ -66,6 +66,18 @@ function createTableElem(){
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            // si tout les champs remplis sont corrects //
+          }else{
+            event.preventDefault()
+            // creation de l'objet contact pour le backend //
+            let contact = {
+              firstName : document.getElementById("prenom").value,
+              lastName : document.getElementById("nom").value,
+              adress : document.getElementById("adresse").value,
+              city : document.getElementById("ville").value,
+              email : document.getElementById("email").value
+            };
+            console.log(contact);
           }
   
           form.classList.add('was-validated')
