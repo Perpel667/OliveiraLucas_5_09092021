@@ -59,7 +59,7 @@ function createTableElem(){
     // Recupere tout les formulaires ou l'ont souhaite appliquer la validation customisée
     var forms = document.querySelectorAll('.needs-validation')
   
-    // Loop dans les formulaire et empeche la confirmation si ce n'est pas valide //
+    // Loop dans les formulaires et empeche la confirmation si ce n'est pas valide //
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
