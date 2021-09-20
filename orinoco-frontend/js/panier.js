@@ -52,6 +52,37 @@ function createTableElem(){
     },0);
     return prixTotal;
  }
+ /* Fetch Post */
+ function confirmPanier(){
+   // recuperation des informations dans l'objet contact //
+  let contact = {
+    firstName : document.getElementById("prenom").value,
+    lastName : document.getElementById("nom").value,
+    address : document.getElementById("adresse").value,
+    city : document.getElementById("ville").value,
+    email : document.getElementById("email").value
+  };
+// recuperation des produits dans le panier dans l'array products //
+  let products = [];
+  for (let k = 0; k < produits.length; k++){
+    products.push(produits[k].id);
+  }
+  // envoi des données au backend //
+  fetch('http://localhost:3000/api/cameras/order',{
+    method :"POST",
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    mode:'cors',
+    body : JSON.stringify({contact : contact,
+    products : products
+    })
+  })
+  .then(function(res){
+    return res.json()
+  })
+  .then(function(data){
+     window.location.href = `${window.location.origin}/orinoco-frontend/confirm.html?orderId=${data.orderId}`
+  })
+ }
  /* Validation des informations */
 (function () {
     'use strict'
@@ -70,19 +101,7 @@ function createTableElem(){
           }else{
             event.preventDefault()
             // creation de l'objet contact pour le backend //
-            let contact = {
-              firstName : document.getElementById("prenom").value,
-              lastName : document.getElementById("nom").value,
-              adress : document.getElementById("adresse").value,
-              city : document.getElementById("ville").value,
-              email : document.getElementById("email").value
-            };
-            console.log(contact);
-            let products = [];
-            for (let k = 0; k < produits.length; k++){
-              products.push(produits[k].nom);
-            }
-            console.log(products);
+            confirmPanier();
           }
   
           form.classList.add('was-validated')
