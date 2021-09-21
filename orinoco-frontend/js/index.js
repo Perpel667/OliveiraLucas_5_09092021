@@ -63,7 +63,7 @@ return res.json()
           // Ajout des attributs //
 
            img.setAttribute('src',data[i].imageUrl);
-          cardBtn.setAttribute('href',"produit.html?id=" + data[i]._id);
+          cardBtn.setAttribute('href',"pages/produit.html?id=" + data[i]._id);
 
           // Ajout des textes (description, nom, etc..) //
           cardBtn.innerText = "Voir le produit";

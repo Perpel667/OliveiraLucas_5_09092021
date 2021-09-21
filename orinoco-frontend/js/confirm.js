@@ -35,7 +35,7 @@ main.innerHTML = `<div class="container vh-100 d-flex align-items-center justify
   <h5 class="card-title text-success">Achat confirmé</h5>
   <p class="card-text">Merci de nous avoir fait confiance pour votre achat d'un montant de <strong>${prixTotal}€</strong>.</p>
   <p class="card-text">Voici votre numero de commande : <strong>${id}</strong>.</p>
-  <a class="text-secondary" href="index.html" id="returnLink"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a></a>
+  <a class="text-secondary" href="../index.html" id="returnLink"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a></a>
 </div>
 </div>
                     </div>`;

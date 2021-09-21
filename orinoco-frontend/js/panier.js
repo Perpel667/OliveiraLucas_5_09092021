@@ -80,7 +80,7 @@ function createTableElem(){
     return res.json()
   })
   .then(function(data){
-     window.location.href = `${window.location.origin}/orinoco-frontend/confirm.html?orderId=${data.orderId}`
+     window.location.href = `${window.location.origin}/orinoco-frontend/pages/confirm.html?orderId=${data.orderId}`
   })
  }
  /* Validation des informations */
@@ -142,7 +142,7 @@ th2.setAttribute('scope','row');
 }else{
     let pagePanier = document.getElementById("pagePanier");
     //supression de la table //
-    pagePanier.innerHTML = `<h5 class="text-center">Aucun article ce trouve dans votre panier</h5><a href="index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a>`;
+    pagePanier.innerHTML = `<h5 class="text-center">Aucun article ce trouve dans votre panier</h5><a href="../index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a>`;
 }
 
 
