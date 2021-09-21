@@ -1,6 +1,7 @@
 /* recuperation de l'id */
 let params = new URL(document.location).searchParams;
 let id = params.get('id');
+/* Variable */
 let url = 'http://localhost:3000/api/cameras';
 
 /*************/
