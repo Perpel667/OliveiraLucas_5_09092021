@@ -84,7 +84,7 @@ function createTableElem(){
   })
  }
  /* Validation des informations */
-(function () {
+(function valid() {
     'use strict'
   
     // Recupere tout les formulaires ou l'ont souhaite appliquer la validation customisée
