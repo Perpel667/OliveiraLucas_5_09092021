@@ -14,12 +14,12 @@ function append(parent,el){
 }
 
 // supressions des classes pour l'error //
-function removeClasses() {
+/* function removeClasses() {
   var col1 = document.getElementById("col1");
   var col2 = document.getElementById("col2");
   col1.classList.remove("col-lg-6");
   col2.classList.remove("col-lg-6");
-}
+} */
 /* Structure de la carte produit */
 
 
