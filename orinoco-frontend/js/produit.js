@@ -29,6 +29,7 @@ function removeClasses() {
 
 //Recuperation des elements //
 const title = document.querySelector('title');
+const card = document.querySelector('.card');
 const cardHeader = document.querySelector('.card-header');
 const cardImg = document.querySelector('.card-img-top');
 const cardTitle = document.querySelector('.card-title');
@@ -91,10 +92,10 @@ fetch(url +"/"+ id)
       })
     })
     .catch(function(error) {
-      cardHeader.remove();
+      /* cardHeader.remove();
       cardBtn.remove();
       cardForm.remove();
-       removeClasses();
-      cardDescr.innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
+       removeClasses(); */
+      card.innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
      });
 
