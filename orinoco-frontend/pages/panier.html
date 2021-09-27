@@ -54,17 +54,17 @@
             <tbody id="tbody">
             </tbody>
           </table>
-          <!-- Informations client -->
+          <!-- Informations client (ajouter accent aux regex)-->
           <div class="row mx-4" id="formPanier">
             <h4>Informations</h4>
             <form id="form" action="confirm.html" method="POST" role="form" class="row g-3 needs-validation" novalidate>
               <div class="col-md-4">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom"pattern="[a-zA-Z]*" required>
+                <input type="text" class="form-control" id="nom"pattern="[A-zÀ-ÿ]*" required>
               </div>
               <div class="col-md-4">
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" pattern="[a-zA-Z]*"required>
+                <input type="text" class="form-control" id="prenom" pattern="[A-zÀ-ÿ]*"required>
               </div>
               <div class="col-md-4">
                 <label for="email" class="form-label">Adresse Email</label>
@@ -91,7 +91,7 @@
               </div>
               <div class="col-md-3">
                 <label for="ville" class="form-label">Ville</label>
-                <input type="text" class="form-control" id="ville" pattern="[a-zA-Z]*"required>
+                <input type="text" class="form-control" id="ville" pattern="[A-zÀ-ÿ]*"required>
                 <div class="invalid-feedback">
                   Veuillez renseigner une ville.
                 </div>
