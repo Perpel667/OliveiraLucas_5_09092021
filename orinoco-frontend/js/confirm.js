@@ -11,17 +11,7 @@ let produits = JSON.parse(localStorage.getItem('produits'));
 /*************/
 /* Functions */
 /*************/
-// calcul du prix total //
-function calculTotal(){
-    toutLesPrix = [];
-   for (let j = 0; j < produits.length; j++){
-       toutLesPrix.push(produits[j].prix);
-   }
-    prixTotal = toutLesPrix.reduce(function(a, b){
-       return a + b;
-   },0);
-   return prixTotal;
-}
+
 // vide le localStorage //
 function removeItems(){
     localStorage.removeItem('produits');

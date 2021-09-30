@@ -4,28 +4,7 @@ let id = params.get('id');
 /* Variable */
 let url = 'http://localhost:3000/api/cameras';
 
-/*************/
-/* Fonctions */
-/*************/
 
-/* Structure de la carte produit */
-function append(parent,el){
-  return parent.appendChild(el);
-}
-
-// supressions des classes pour l'error //
-/* function removeClasses() {
-  var col1 = document.getElementById("col1");
-  var col2 = document.getElementById("col2");
-  col1.classList.remove("col-lg-6");
-  col2.classList.remove("col-lg-6");
-} */
-/* Structure de la carte produit */
-
-
-/*************/
-/* Fonctions */
-/*************/
 
 //Recuperation des elements //
 const title = document.querySelector('title');
@@ -92,10 +71,6 @@ fetch(url +"/"+ id)
       })
     })
     .catch(function(error) {
-      /* cardHeader.remove();
-      cardBtn.remove();
-      cardForm.remove();
-       removeClasses(); */
       card.innerHTML = "<h3 class='text-center'>Oups!</h3><br/>" + "<p class='text-center'>Une erreur s'est produite, veuillez réessayer ulterieument. Si le problème persiste veuillez contacter notre support.</p>";
      });
 

@@ -1,3 +1,4 @@
+
 /* Variables */
 const productsList = document.getElementById("productsList");
 const url = "http://localhost:3000/api/cameras";
@@ -18,10 +19,6 @@ function create(){
      cardBtn = document.createElement('a');
 };
 
-// Structure des cartes produits //
-function append(parent,el){
-    return parent.appendChild(el);
-};
 
 function structure(){
     append(productsList,col);

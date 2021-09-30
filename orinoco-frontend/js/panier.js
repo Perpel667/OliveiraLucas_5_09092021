@@ -8,10 +8,6 @@
 /* Functions */
 /*************/
 
-/* append */
-function append(parent,el){
-    return parent.appendChild(el);
-  }
   /* creation de la table panier */
 function createTableElem(){
     // recuperation du parent et creation des elements //
@@ -40,17 +36,6 @@ function createTableElem(){
     append(tfoot,th2);
     append(tfoot,td3);
     append(tfoot,td4);
- }
- /* calcul du prix total */
- function calculTotal(){
-     toutLesPrix = [];
-    for (let j = 0; j < produits.length; j++){
-        toutLesPrix.push(produits[j].prix);
-    }
-     prixTotal = toutLesPrix.reduce(function(a, b){
-        return a + b;
-    },0);
-    return prixTotal;
  }
  /* Fetch Post */
  function confirmPanier(){
@@ -125,7 +110,7 @@ for (let i = 0; i < produits.length; i++) {
     td.innerHTML = produits[i].option;
     td2.innerHTML = produits[i].prix + " €";
 }
-//Calcul qui me retourne le prix total //
+//fonction qui me retourne le prix total //
     calculTotal();
 // footer table panier //
 createTableFooter()
