@@ -21,12 +21,10 @@
                         <a class="navbar-brand d-flex align-items-center brand-title" href="../index.html"><img src="../../orinoco-backend/images/logo-Orinoco.png" alt="Logo Orinoco" width="40"><span class="h2 mx-1 my-auto"> Orinoco</span></a>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a href="panier.html" class="nav-link">
-                                    <button aria-labelledby="Panier" type="button" class="btn btn-outline-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                          </svg>
-                                      </button>
+                              <a href="./panier.html" aria-labelledby="panier" class="btn btn-outline-light">
+                                <svg id="panier" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                  </svg>
                                 </a>
                             </li>
                         </ul>
@@ -57,14 +55,14 @@
           <!-- Informations client -->
           <div class="row mx-4" id="formPanier">
             <h4>Informations</h4>
-            <form id="form" action="confirm.html" method="POST" role="form" class="row g-3 needs-validation" novalidate>
+            <form id="form" action="confirm.html" method="POST" class="row g-3 needs-validation" novalidate>
               <div class="col-md-4">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom"pattern="[A-zÀ-ÿ]*" required>
+                <input type="text" class="form-control" id="nom" pattern="[A-zÀ-ÿ]*" required>
               </div>
               <div class="col-md-4">
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" pattern="[A-zÀ-ÿ]*"required>
+                <input type="text" class="form-control" id="prenom" pattern="[A-zÀ-ÿ]*" required>
               </div>
               <div class="col-md-4">
                 <label for="email" class="form-label">Adresse Email</label>
@@ -91,13 +89,13 @@
               </div>
               <div class="col-md-3">
                 <label for="ville" class="form-label">Ville</label>
-                <input type="text" class="form-control" id="ville" pattern="[A-zÀ-ÿ]*"required>
+                <input type="text" class="form-control" id="ville" pattern="[A-zÀ-ÿ]*" required>
                 <div class="invalid-feedback">
                   Veuillez renseigner une ville.
                 </div>
               </div>
               <div class="text-center text-md-start col-md-6">
-                <a href="../index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil<a></a>
+                <a href="../index.html" class="link-secondary text-decoration-none"><i class="bi bi-arrow-left-short"></i>Retour vers l'acceuil</a>
               </div>
               <div class="text-center col-md-6 text-md-end">
                 <button class="btn btn-success" type="submit">Confirmer la commande</button>
