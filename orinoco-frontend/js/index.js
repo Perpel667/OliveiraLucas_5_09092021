@@ -1,7 +1,7 @@
 
 /* Variables */
 const productsList = document.getElementById("productsList");
-const url = "http://localhost:3000/api/cameras";
+const url = "http://[::1]:3000/api/cameras";
 /* Variables */
 
 /*************/

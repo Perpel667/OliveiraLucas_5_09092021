@@ -53,7 +53,7 @@ function createTableElem(){
     products.push(produits[k].id);
   }
   // envoi des données au backend //
-  fetch('http://localhost:3000/api/cameras/order',{
+  fetch('http://[::1]:3000/api/cameras/order',{
     method :"POST",
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
     mode:'cors',
